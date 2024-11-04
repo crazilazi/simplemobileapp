@@ -36,12 +36,13 @@ refreshenv
 1. Open Android Studio
 2. Go to Settings/Preferences → Appearance & Behavior → System Settings → Android SDK
 3. Select "SDK Platforms" tab and install:
-   - Android 13.0 (API 33)
-   - Android SDK Platform 33
+   - Android 14.0 (API 34)
+   - Android SDK Platform 34
    - Intel x86 Atom_64 System Image or Google APIs Intel x86 Atom System Image
+   - Google Play Intel x86 Atom System Image (for Play Store testing)
 
 4. Select "SDK Tools" tab and install:
-   - Android SDK Build-Tools
+   - Android SDK Build-Tools 34
    - Android SDK Command-line Tools
    - Android Emulator
    - Android SDK Platform-Tools
