@@ -16,8 +16,8 @@ Run these commands in PowerShell (Administrator):
 # Install Node.js LTS
 choco install nodejs-lts -y
 
-# Install OpenJDK 11
-choco install openjdk11 -y
+# Install OpenJDK 17
+choco install openjdk17 -y
 
 # Install Android Studio
 choco install androidstudio -y
