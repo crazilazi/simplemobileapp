@@ -1,207 +1,271 @@
-# 🚀 React Native Setup Guide - Windows 11 
+# 📱 SimpleMobileApp
+A simple mobile app using React Native expo framwork
 
 ## 📋 Table of Contents
-- [Prerequisites](#-prerequisites)
-- [Environment Setup](#-environment-setup)
+- [Install Chocolatey](#-install-chocolatey)
+- [Dependencies Installation](#-dependencies-installation)
+- [Android Studio Setup](#-android-studio-setup)
+- [Expo Setup](#-expo-setup)
 - [Project Creation](#-project-creation)
 - [Running Your App](#-running-your-app)
-- [Common Issues](#-common-issues)
-- [Useful Commands](#-useful-commands)
-- [Learning Resources](#-learning-resources)
+- [Development Tips](#-development-tips)
+- [Troubleshooting](#-troubleshooting)
 
-## 💻 Prerequisites
-Before we dive in, make sure you have:
-- Windows 11 OS
-- A stable internet connection
-- At least 8GB RAM (16GB recommended)
-- 30GB+ free disk space
+## 🍫 Install Chocolatey
 
-## 🛠 Environment Setup
+### 1. Open PowerShell as Administrator 👨‍💻
+- Press `Win + X`
+- Select "Windows PowerShell (Admin)" or "Terminal (Admin)"
 
-### 1. Install Node.js 📦
-```bash
-# Visit https://nodejs.org
-# Download & install LTS version
-# Verify installation:
+### 2. Install Chocolatey 📦
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+### 3. Verify Installation ✅
+```powershell
+choco --version
+```
+
+## 🛠 Dependencies Installation
+
+### 1. Install Required Software
+```powershell
+# Install essential development tools
+choco install nodejs-lts -y     # ⚡ Node.js LTS
+choco install openjdk17 -y      # ☕ Java Development Kit
+choco install androidstudio -y  # 🤖 Android Studio
+choco install vscode -y         # 📝 Visual Studio Code
+choco install git -y           # 🌿 Git
+
+# Refresh environment variables
+refreshenv
+
+# Verify installations
 node --version
 npm --version
-```
-
-### 2. Install Git 🌿
-```bash
-# Visit https://git-scm.com/downloads
-# Download & install Git for Windows
-# Verify installation:
 git --version
+code --version
+java --version
 ```
 
-### 3. Install VSCode 📝
-- Download from https://code.visualstudio.com
-- Install these awesome extensions: 
-  - ⚛️ React Native Tools
-  - 🎨 Prettier
-  - ⚡ ESLint
-  - 🏷️ Auto Close Tag
-  - 🔄 Auto Rename Tag
-
-### 4. Install Android Studio 🤖
-```bash
-# 1. Download from https://developer.android.com/studio
-# 2. During installation, select:
-#    - Android SDK
-#    - Android SDK Platform
-#    - Android Virtual Device
+### 2. Install VSCode Extensions 🔧
+```powershell
+# Install essential extensions
+code --install-extension dsznajder.es7-react-js-snippets
+code --install-extension esbenp.prettier-vscode
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension formulahendry.auto-close-tag
+code --install-extension formulahendry.auto-rename-tag
 ```
 
-### 5. Set Environment Variables 🔧
-```bash
-# Open Windows Settings → System → About → Advanced system settings
-# Click "Environment Variables"
-# Add to User variables:
-ANDROID_HOME = C:\Users\YourUsername\AppData\Local\Android\Sdk
+## 🤖 Android Studio Setup
 
-# Add to Path:
-%ANDROID_HOME%\platform-tools
-%ANDROID_HOME%\tools
-%ANDROID_HOME%\tools\bin
-```
+### 1. Initial Configuration
+1. Launch Android Studio
+2. Complete the setup wizard
+3. Go to Settings/Preferences → Appearance & Behavior → System Settings → Android SDK
 
-### 6. Install Expo CLI 📱
-```bash
+### 2. Install SDK Components 📱
+In "SDK Platforms" tab, install:
+- ✅ Android 14.0 (API 34)
+- ✅ Android SDK Platform 34
+- ✅ Intel x86 Atom_64 System Image
+- ✅ Google APIs Intel x86 Atom System Image
+
+In "SDK Tools" tab, install:
+- ✅ Android SDK Build-Tools 34
+- ✅ Android SDK Command-line Tools
+- ✅ Android Emulator
+- ✅ Android SDK Platform-Tools
+
+### 3. Create Android Virtual Device (AVD) 📱
+1. Click "Tools" → "Device Manager"
+2. Click "Create Virtual Device"
+3. Select "Pixel 7" (or any other device)
+4. Download and select API 34 system image
+5. Complete the AVD creation
+
+## 📱 Expo Setup
+
+### 1. Install Expo CLI
+```powershell
 npm install -g expo-cli
+
+# Verify installation
+expo --version
+```
+
+### 2. Create Expo Account (Optional but Recommended)
+```powershell
+# Login to Expo
+expo login
+
+# Or create account if you don't have one
+expo register
 ```
 
 ## 🎯 Project Creation
 
-### 1. Create New Project
-```bash
-# Replace MyAwesomeApp with your project name
-npx create-expo-app MyAwesomeApp
-cd MyAwesomeApp
-```
+### 1. Create New Expo Project
+```powershell
+# Create new project
+npx create-expo-app MyExpoApp
+cd MyExpoApp
 
-### 2. Open in VSCode
-```bash
+# Open in VSCode
 code .
 ```
 
-### 3. Add VSCode Settings ⚙️
+### 2. Configure VSCode Settings ⚙️
 Create `.vscode/settings.json`:
 ```json
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 2,
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
 ```
 
-## 🏃‍♂️ Running Your App
+### 3. Initialize Project Structure
+```
+MyExpoApp/
+├── 📱 App.js            # Main application file
+├── 📁 assets/           # Images, fonts, etc.
+├── 📁 src/              # Source code
+│   ├── 📁 components/   # React components
+│   ├── 📁 screens/      # Screen components
+│   ├── 📁 navigation/   # Navigation config
+│   └── 📁 utils/        # Utility functions
+├── 📦 package.json      # Dependencies
+└── 📝 app.json         # Expo configuration
+```
+
+### 4. Install Essential Dependencies
+```powershell
+# Navigation
+npm install @react-navigation/native @react-navigation/native-stack
+npx expo install react-native-screens react-native-safe-area-context
+
+# Status bar and other utilities
+npx expo install expo-status-bar expo-constants
+```
+
+## ▶️ Running Your App
 
 ### 1. Start Development Server
-```bash
+```powershell
+# Start Expo development server
 npx expo start
 ```
 
-### 2. Test on Real Device 📱
-- Install "Expo Go" from Play Store/App Store
-- Scan QR code with:
-  - 🤖 Android: Expo Go app
-  - 🍎 iOS: Phone camera
-
-### 3. Test on Emulator 🖥️
-```bash
+### 2. Running on Android Emulator 📱
+```powershell
 # Start Android emulator first
 npx expo start --android
 ```
 
-## 🔧 Common Issues
+### 3. Running on Physical Device 📱
+1. Install "Expo Go" app from Play Store/App Store
+2. Scan QR code with:
+   - Android: Expo Go app
+   - iOS: Phone camera
 
-### Metro Bundler Issues 🚇
-```bash
-# Clear cache
+## 💻 Development Tips
+
+### 1. Essential Commands
+```powershell
+# Start development server
+npx expo start
+
+# Clear cache and start
 npx expo start -c
 
-# Nuclear option: Delete node_modules
+# Start with specific platform
+npx expo start --android
+npx expo start --ios
+npx expo start --web
+
+# Install dependencies
+npm install package-name
+```
+
+### 2. Debugging Tools 🔧
+- Press 'r' in terminal to reload
+- Press 'm' to toggle menu
+- Press 'j' to open debugger
+- Shake device for dev menu (physical device)
+
+## ❗ Troubleshooting
+
+### 1. Metro Bundler Issues
+```powershell
+# Clear Metro cache
+npx expo start -c
+
+# Reset Expo cache
+expo r -c
+```
+
+### 2. Android Emulator Issues
+```powershell
+# Check if emulator is available
+emulator -list-avds
+
+# Start emulator from command line
+emulator -avd [EmulatorName]
+```
+
+### 3. Node Modules Issues
+```powershell
+# Remove node_modules and reinstall
 rm -rf node_modules
 npm install
 ```
 
-### Android Device Not Connecting 📵
-1. ✅ Enable USB debugging
-2. 🔌 Try different USB ports
-3. 🔄 Restart ADB:
-```bash
-adb kill-server
-adb start-server
+## 🔄 Updating Dependencies
+
+### 1. Update Expo SDK
+```powershell
+npx expo-cli upgrade
 ```
 
-### Expo Go Not Scanning QR 📷
-1. 📡 Ensure phone & PC on same network
-2. 🔄 Try switching connection type:
-```bash
-# Press 'd' in terminal for developer menu
-# Press 'w' to toggle connection type
+### 2. Update Other Dependencies
+```powershell
+# Check outdated packages
+npm outdated
+
+# Update all packages
+npm update
 ```
 
-## 📝 Useful Commands
+## 📱 Testing Your App
 
-```bash
-# Start project
-npx expo start
+### 1. Development Build
+```powershell
+npx expo prebuild
+```
 
-# Clear cache & start
-npx expo start -c
-
-# Install packages
-npm install package-name
-
-# Run on Android
-npx expo start --android
-
-# Run on iOS (requires macOS)
-npx expo start --ios
-
-# Build standalone app
+### 2. Production Build
+```powershell
 eas build
 ```
 
-## 📚 Learning Resources
-
-### Official Documentation 📖
-- 📱 [React Native Docs](https://reactnative.dev/docs/getting-started)
-- 🚀 [Expo Docs](https://docs.expo.dev)
-
-### Community 👥
-- 💬 [React Native Discord](https://discord.gg/react-native)
-- 🤝 [Expo Forums](https://forums.expo.dev)
-- ❓ [Stack Overflow](https://stackoverflow.com/questions/tagged/react-native)
-
-### File Structure 📂
-```
-MyAwesomeApp/
-├── 📱 App.js           # Main component
-├── 🖼️ assets/          # Static files
-├── 📦 package.json     # Dependencies
-├── 📁 node_modules/    # Packages
-├── 📝 .gitignore      # Git ignore
-└── ⚙️ app.json        # Expo config
-```
-
-## 🎉 Success!
-If you've followed all steps, you should now have a working React Native development environment! Happy coding! 🎨 👨‍💻 👩‍💻
-
-## ⭐ Pro Tips
-1. 💡 Use `console.log()` for debugging
-2. 🔄 Enable Hot Reloading
-3. 📱 Test on multiple devices
-4. 🔍 Use React Native Debugger
-5. ⚡ Keep dependencies updated
+## 🎯 Next Steps
+1. 📚 Learn Expo SDK features
+2. 🎨 Implement UI components
+3. 📱 Add navigation
+4. 🔌 Integrate APIs
+5. 📦 Explore Expo modules
 
 ## 🆘 Need Help?
-- Check the [troubleshooting guide](https://reactnative.dev/docs/troubleshooting)
-- Search on [Stack Overflow](https://stackoverflow.com/questions/tagged/react-native)
-- Ask in React Native Discord
+- 📱 [Expo Documentation](https://docs.expo.dev)
+- ⚛️ [React Native Documentation](https://reactnative.dev)
+- 🍫 [Chocolatey Documentation](https://docs.chocolatey.org)
+- 💬 [Expo Forums](https://forums.expo.dev)
 
 ---
-Made with ❤️ by a fellow React Native developer
+Made with 🍫 and ❤️ using Expo and Chocolatey
