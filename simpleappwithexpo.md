@@ -48,17 +48,6 @@ git --version
 code --version
 java --version
 ```
-
-### 2. Install VSCode Extensions 🔧
-```powershell
-# Install essential extensions
-code --install-extension dsznajder.es7-react-js-snippets
-code --install-extension esbenp.prettier-vscode
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension formulahendry.auto-close-tag
-code --install-extension formulahendry.auto-rename-tag
-```
-
 ## 🤖 Android Studio Setup
 
 ### 1. Initial Configuration
