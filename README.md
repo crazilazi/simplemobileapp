@@ -13,19 +13,19 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Run these commands in PowerShell (Administrator):
 
 ```powershell
-# Install Node.js LTS
+# Install Node.js LTS, if it is not installed
 choco install nodejs-lts -y
 
-# Install OpenJDK 17
+# Install OpenJDK 17, if it is not installed
 choco install openjdk17 -y
 
-# Install Android Studio
+# Install Android Studio, if it is not installed
 choco install androidstudio -y
 
-# Install Visual Studio Code
+# Install Visual Studio Code, if it is not installed
 choco install vscode -y
 
-# Install Git (if needed)
+# Install Git (if needed), if it is not installed
 choco install git -y
 
 # Refresh environment variables
