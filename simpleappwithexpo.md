@@ -77,21 +77,13 @@ In "SDK Tools" tab, install:
 
 ## 📱 Expo Setup
 
-### 1. Install Expo CLI
-```powershell
-npm install -g expo-cli
-
-# Verify installation
-expo --version
-```
-
-### 2. Create Expo Account (Optional but Recommended)
+### 1. Create Expo Account (Optional but Recommended)
 ```powershell
 # Login to Expo
-expo login
+npx expo login
 
 # Or create account if you don't have one
-expo register
+npx expo register
 ```
 
 ## 🎯 Project Creation
