@@ -69,11 +69,6 @@ In "SDK Tools" tab, install:
 - ✅ Android SDK Platform-Tools
 
 ### 3. Create Android Virtual Device (AVD) 📱
-1. Click "Tools" → "Device Manager"
-2. Click "Create Virtual Device"
-3. Select "Pixel 7" (or any other device)
-4. Download and select API 34 system image
-5. Complete the AVD creation
 
 ## 📱 Expo Setup
 
