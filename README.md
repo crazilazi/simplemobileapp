@@ -32,23 +32,20 @@ choco install git -y           # 🌿 Git
 refreshenv
 ```
 
-## 🛠 Android Studio Configuration
+### 2. Install SDK Components 📱
+In "SDK Platforms" tab, install anroid 14 or 15 and their api's:
+- ✅ Android 14.0 (API 34)
+- ✅ Android SDK Platform 34
+- ✅ Intel x86 Atom_64 System Image
+- ✅ Google APIs Intel x86 Atom System Image
 
-1. 🚀 Launch Android Studio
-2. ⚙️ Navigate to: Settings/Preferences → Appearance & Behavior → System Settings → Android SDK
+In "SDK Tools" tab, install:
+- ✅ Android SDK Build-Tools 34
+- ✅ Android SDK Command-line Tools
+- ✅ Android Emulator
+- ✅ Android SDK Platform-Tools
 
-3. 📱 In "SDK Platforms" tab, install:
-   - ✅ Android 14.0 (API 34)
-   - ✅ Android SDK Platform 34
-   - ✅ Intel x86 Atom_64 System Image
-   - ✅ Google APIs Intel x86 Atom System Image
-   - ✅ Google Play Intel x86 Atom System Image
-
-4. 🔧 In "SDK Tools" tab, install:
-   - ✅ Android SDK Build-Tools 34
-   - ✅ Android SDK Command-line Tools
-   - ✅ Android Emulator
-   - ✅ Android SDK Platform-Tools
+### 3. Create Android Virtual Device (AVD) 📱
 
 ## 🎯 Project Creation
 ```powershell
