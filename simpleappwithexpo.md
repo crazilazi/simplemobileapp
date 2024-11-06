@@ -56,7 +56,7 @@ java --version
 3. Go to Settings/Preferences → Appearance & Behavior → System Settings → Android SDK
 
 ### 2. Install SDK Components 📱
-In "SDK Platforms" tab, install:
+In "SDK Platforms" tab, install anroid 14 or 15 and their api's:
 - ✅ Android 14.0 (API 34)
 - ✅ Android SDK Platform 34
 - ✅ Intel x86 Atom_64 System Image
@@ -91,48 +91,11 @@ npx expo register
 ### 1. Create New Expo Project
 ```powershell
 # Create new project
-npx create-expo-app MyExpoApp
-cd MyExpoApp
+npx create-expo-app ExpoSimpleMobileApp
+cd ExpoSimpleMobileApp
 
 # Open in VSCode
 code .
-```
-
-### 2. Configure VSCode Settings ⚙️
-Create `.vscode/settings.json`:
-```json
-{
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.tabSize": 2,
-  "files.insertFinalNewline": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always"
-}
-```
-
-### 3. Initialize Project Structure
-```
-MyExpoApp/
-├── 📱 App.js            # Main application file
-├── 📁 assets/           # Images, fonts, etc.
-├── 📁 src/              # Source code
-│   ├── 📁 components/   # React components
-│   ├── 📁 screens/      # Screen components
-│   ├── 📁 navigation/   # Navigation config
-│   └── 📁 utils/        # Utility functions
-├── 📦 package.json      # Dependencies
-└── 📝 app.json         # Expo configuration
-```
-
-### 4. Install Essential Dependencies
-```powershell
-# Navigation
-npm install @react-navigation/native @react-navigation/native-stack
-npx expo install react-native-screens react-native-safe-area-context
-
-# Status bar and other utilities
-npx expo install expo-status-bar expo-constants
 ```
 
 ## ▶️ Running Your App
@@ -189,38 +152,6 @@ npx expo start -c
 
 # Reset Expo cache
 expo r -c
-```
-
-### 2. Android Emulator Issues
-```powershell
-# Check if emulator is available
-emulator -list-avds
-
-# Start emulator from command line
-emulator -avd [EmulatorName]
-```
-
-### 3. Node Modules Issues
-```powershell
-# Remove node_modules and reinstall
-rm -rf node_modules
-npm install
-```
-
-## 🔄 Updating Dependencies
-
-### 1. Update Expo SDK
-```powershell
-npx expo-cli upgrade
-```
-
-### 2. Update Other Dependencies
-```powershell
-# Check outdated packages
-npm outdated
-
-# Update all packages
-npm update
 ```
 
 ## 📱 Testing Your App
