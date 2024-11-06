@@ -61,7 +61,7 @@ Run in PowerShell (Administrator):
 refreshenv
 ```
 
-## 5. Install React Native CLI
+## 5. Create React Native APP
 ```powershell
-npm install -g @react-native/cli
+npx @react-native-community/cli init SimpleMobileApp
 ```
